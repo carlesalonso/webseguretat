@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IT Solutions</title>
+    <!-- Agrega la referencia a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Nombre de tu Sitio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#inicio">Inici</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#servicios">Serveix</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#acerca">Sobre Nosaltres</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacte</a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+
+<!-- Sección de Inicio -->
+<section id="inicio" class="container mt-5">
+    <h2>Bienvenido a IT Consulting</h2>
+    <p>Somos tu socio confiable en soluciones informáticas y consultoría tecnológica. En IT Consulting, nos apasiona impulsar la innovación y el éxito de tu empresa a través de servicios especializados en desarrollo de aplicaciones, soporte técnico y más. Descubre cómo podemos llevar tu negocio al siguiente nivel.</p>
+</section>
+
+<!-- Sección de Servicios -->
+<section id="servicios" class="container mt-5">
+    <h2>Nuestros Servicios</h2>
+    <p>Descripción de los servicios que ofrecemos.</p>
+</section>
+
+<!-- Sección de Acerca de Nosotros -->
+<section id="acerca" class="container mt-5">
+    <h2>Acerca de Nosotros</h2>
+    <p>Información sobre tu empresa o proyecto.</p>
+</section>
+
+<!-- Sección de Contacto -->
+<section id="contacto" class="container mt-5">
+    <h2>Contacto</h2>
+    <p>Formulario de contacto.</p>
+    <form id="contactForm" onsubmit="enviarFormulario(); return false;">
+        <!-- Campo de Nombre -->
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+
+        <!-- Campo de Correo Electrónico -->
+        <div class="form-group">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" class="form-control" id="correo" name="correo" required>
+        </div>
+
+        <!-- Campo de Número de Teléfono -->
+        <div class="form-group">
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="tel" class="form-control" id="telefono" name="telefono" required>
+        </div>
+
+        <!-- Botón de Enviar -->
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    <div id="resultado" class="mt-3"></div>
+</section>
+
+<script>
+    function enviarFormulario() {
+        // Obtiene los valores de los campos
+        var nombre = document.getElementById("nombre").value;
+        var correo = document.getElementById("correo").value;
+        var telefono = document.getElementById("telefono").value;
+
+        // Realiza la validación simple (puedes mejorarla según tus necesidades)
+        if (nombre === "" || correo === "" || telefono === "") {
+            document.getElementById("resultado").innerHTML = "<div class='alert alert-danger'>Por favor, completa todos los campos.</div>";
+        } else {
+            // Simula el envío del formulario
+            document.getElementById("resultado").innerHTML = "<div class='alert alert-success'>¡Formulario enviado con éxito!</div>";
+
+            // Puedes agregar aquí el código para enviar los datos al servidor (AJAX, Fetch, etc.)
+            // Limpia el formulario
+            document.getElementById("contactForm").reset();
+
+            // Vuelve a la página index.html después de 2 segundos (puedes ajustar este tiempo)
+            setTimeout(function(){
+                window.location.href = "index.html";
+            }, 2000);
+        }
+    }
+</script>
+<!-- Agrega la referencia a Bootstrap JS y Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
